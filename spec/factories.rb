@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :score_record do
+    user_id 1
+    pull_request_id 1
+    points 10
+  end
+  
   factory :user do
     name { Faker::Name.name }
     nickname { Faker::Internet.user_name(nil, %w(-)) }

@@ -31,6 +31,7 @@ class PointsMarshaler
 
       if review.valid?
         Score.give(time: pr.merged_at, user: user, points: review_points)
+        ScoreRecord.create user: user, pull_request: pr, points: review_points, time: pr.merged_at
       end
     end
   end
@@ -42,6 +43,7 @@ class PointsMarshaler
 
       if pairing.valid?
         Score.give(time: pr.merged_at, user: u, points: pair_points)
+        ScoreRecord.create user: u, pull_request: pr, points: pair_points, time: pr.merged_at
       end
     end
   end

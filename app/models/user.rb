@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :pull_requests
   has_many :scores
+  has_many :score_records, dependent: :destroy
   has_many :pull_request_reviews
   has_many :weekly_winnings
   has_many :access_tokens, dependent: :destroy

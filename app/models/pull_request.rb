@@ -2,6 +2,7 @@ class PullRequest < ActiveRecord::Base
   belongs_to :user
   has_many :pull_request_reviews, dependent: :destroy
   has_many :pairings, dependent: :destroy
+  has_many :score_records, dependent: :destroy
 
   validates :user, presence: true
   validates :number, presence: true, numericality: true
